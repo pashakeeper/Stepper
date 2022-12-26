@@ -12,6 +12,11 @@ $(document).ready(function () {
             finish: "Отправить"
 
         },
+        onStepChange: function (event, currentIndex, newIndex) {
+            if (stepsWizard.steps("getCurrentIndex") == 0) {
+                $("ul[role='menu']").hide();
+            }
+        }
 
     });
     $("#start").click(function () {
@@ -32,25 +37,41 @@ $(document).ready(function () {
     if (stepsWizard.steps("getCurrentIndex") == 0) {
         $("ul[role='menu']").hide();
     }
-    $('.step_01 textarea').keypress(function () {
-        $(this).addClass('checked');
-        $('.step_01 input').not(this).prop('checked', false);
-    });
-    $('.step_01 textarea').click(function () {
-        $(this).addClass('checked');
-        $('.step_01 input').not(this).prop('checked', false);
-    })
-    $('.step_01 input').click(function () {
-        if ($('.step_01 input:checked')) {
-            $('.step_01 textarea').removeClass('checked')
-        }
-    })
-
+    // inputs
+    textInInputs();
     // Checkboxes
     checkBoxes();
 });
 
 
+function textInInputs() {
+    $('.step_01 input[type="text"]').keypress(function () {
+        $(this).addClass('checked');
+        $('.step_01 input').not(this).prop('checked', false);
+    });
+    $('.step_01 input[type="text"]').click(function () {
+        $(this).addClass('checked');
+        $('.step_01 input[type="checkbox"]').not(this).prop('checked', false);
+    })
+    $('.step_01 input[type="checkbox"]').click(function () {
+        if ($('.step_01 input:checked')) {
+            $('.step_01 input[type="text"]').removeClass('checked')
+        }
+    })
+    $('.step_05 input[type="text"]').keypress(function () {
+        $(this).addClass('checked');
+        $('.step_05 input').not(this).prop('checked', false);
+    });
+    $('.step_05 input[type="text"]').click(function () {
+        $(this).addClass('checked');
+        $('.step_05 input[type="checkbox"]').not(this).prop('checked', false);
+    })
+    $('.step_05 input[type="checkbox"]').click(function () {
+        if ($('.step_05 input:checked')) {
+            $('.step_05 input[type="text"]').removeClass('checked')
+        }
+    })
+}
 function checkBoxes() {
     $('.step_01 input').click(function () {
         $('.step_01 input').not(this).prop('checked', false);

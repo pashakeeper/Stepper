@@ -15,7 +15,7 @@
 
     <div class="wrapper">
         <div class="container">
-            <form action="">
+            <form action="post" id="main_form">
                 <h3></h3>
                 <section class="step_level step_00" id="step_00">
                     <h1>Помогите нам стать лучше и получите СКИДКУ 10% на аренду мебели!</h1>
@@ -38,15 +38,16 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input class="inputs" id="step1_1" value="реклама (баннер) в интернете" type="checkbox"
+                        <input class="inputs required" id="step1_1" value="реклама (баннер) в интернете" type="checkbox"
                                placeholder="">
                         <label for="step1_1">реклама (баннер) в интернете</label>
-                        <input class="inputs" id="step1_2" value="поисковая система" type="checkbox" placeholder="">
+                        <input class="inputs required" id="step1_2" value="поисковая система" type="checkbox"
+                               placeholder="">
                         <label for="step1_2">поисковая система</label>
-                        <input class="inputs" id="step1_3" value="социальные сети" type="checkbox" placeholder="">
+                        <input class="inputs required" id="step1_3" value="социальные сети" type="checkbox"
+                               placeholder="">
                         <label for="step1_3">социальные сети</label>
-                        <textarea name="step1_1_text" id="step1_1_text" cols="30" placeholder="свой ответ (кратко)"
-                                  rows="10"></textarea>
+                        <input type="text" name="step1_1_text" id="step1_1_text" placeholder="свой ответ (кратко)">
                     </div>
                 </section>
                 <h3></h3>
@@ -118,13 +119,11 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-
-                        <label for="step5_1">По средствам телефонного звонка</label>
                         <input id="step5_1" value="По средствам телефонного звонка" type="checkbox" placeholder="">
-                        <label for="step5_2">Предпочитаю месенджеры</label>
+                        <label for="step5_1">По средствам телефонного звонка</label>
                         <input id="step5_2" value="Предпочитаю месенджеры" type="checkbox" placeholder="">
-                        <textarea name="step2_2_text" id="step2_3_text" cols="30" placeholder="Свой вариант ответа"
-                                  rows="10"></textarea>
+                        <label for="step5_2">Предпочитаю месенджеры</label>
+                        <input type="text" name="step2_2_text" id="step2_3_text" placeholder="Свой вариант ответа">
                     </div>
                 </section>
                 <h3></h3>
@@ -137,13 +136,12 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-
-                        <label for="step6_1">По средствам телефонного звонка</label>
                         <input id="step6_1" value="По средствам телефонного звонка" type="checkbox" placeholder="">
-                        <label for="step6_2">Предпочитаю месенджеры</label>
+                        <label for="step6_1">По средствам телефонного звонка</label>
                         <input id="step6_2" value="Предпочитаю месенджеры" type="checkbox" placeholder="">
-                        <textarea name="step3_3_text" id="step3_3_text" cols="30"
-                                  placeholder="не совсем (Пожалуйста, опишите кратко что именно)" rows="10"></textarea>
+                        <label for="step6_2">Предпочитаю месенджеры</label>
+                        <input type="text" name="step3_3_text" id="step3_3_text"
+                               placeholder="не совсем (Пожалуйста, опишите кратко что именно)">
                     </div>
                 </section>
                 <h3></h3>
@@ -236,6 +234,9 @@
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
+            integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/jquery.steps.min.js"></script>
     <script src="js/stepper.js"></script>
 </body>

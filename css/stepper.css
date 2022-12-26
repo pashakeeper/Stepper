@@ -688,6 +688,12 @@ h1 {
     opacity: 0;
 }
 
+.form_box input[type="text"] {
+    opacity: 1;
+    z-index: 1;
+    position: relative;
+}
+
 .form_box input+label {
     display: inline-flex;
     align-items: center;
@@ -698,7 +704,7 @@ h1 {
     letter-spacing: .5px;
     font-size: 16px;
     display: block;
-    height: 40px;
+    height: 46px;
     width: 100%;
     box-sizing: border-box;
     border: 1px solid transparent;
@@ -740,13 +746,13 @@ h1 {
 }
 
 
-.form_box textarea.checked {
+.form_box input[type="text"].checked {
     background: #3363e2 !important;
     border-color: #1c4bc6 !important;
     color: #fff !important;
 }
 
-.form_box textarea.checked::after {
+.form_box input[type="text"].checked::after {
     display: inline-block;
     font-style: normal;
     font-variant: normal;
@@ -754,24 +760,24 @@ h1 {
     -webkit-font-smoothing: antialiased;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\f00c";
+    content: "\f11c";
     font-size: 20px;
     position: absolute;
     right: 10px;
 }
 
 
-.form_box textarea:hover {
+.form_box input[type="text"]:hover {
     background-color: #e6e6e6;
     border-color: #ccc;
     cursor: text;
 }
 
-.form_box textarea:focus {
+.form_box input[type="text"]:focus {
     outline: 0;
 }
 
-.form_box textarea {
+.form_box input[type="text"] {
     letter-spacing: .5px;
     font-size: 16px;
     display: block;
@@ -837,4 +843,48 @@ h1 {
 
 .actions ul li {
     color: #333d60;
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    font-size: 25px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.actions ul li:hover {
+    background: rgba(51, 61, 96, 0.15);
+}
+
+.actions ul li:nth-child(2) {
+    background-color: #3363e2;
+    border: 1px solid #1c4bc6;
+}
+
+.actions ul li:nth-child(2) a {
+    color: #fff;
+}
+
+.actions ul li:nth-child(2):hover {
+    background: #1c4bc6;
+}
+
+.actions ul li:nth-child(2):hover a {
+    color: #fff;
+}
+
+.actions ul li a {
+    color: #333d60;
+}
+
+.actions ul li a:hover {}

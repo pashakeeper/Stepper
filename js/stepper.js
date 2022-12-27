@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-    let stepsWizard = $("form").steps({
+    let stepsWizard = $("form");
+    stepsWizard.steps({
         headerTag: "h3",
         bodyTag: "section",
         transitionEffect: "slideLeft",
@@ -12,13 +13,29 @@ $(document).ready(function () {
             finish: "Отправить"
 
         },
+        onStepChanging: function (event, currentIndex, newIndex) {
+
+        },
+        onFinishing: function (event, currentIndex) {
+
+        },
         onStepChange: function (event, currentIndex, newIndex) {
             if (stepsWizard.steps("getCurrentIndex") == 0) {
                 $("ul[role='menu']").hide();
             }
+
+        },
+        onInit: function (event, current) {
+            $('.actions ul li:last-child').addClass('finish')
+            $('.actions a[href=\\#finish]').attr('id', 'FinishButton');
+        },
+        onFinished: function (event, currentIndex) {
+            alert("Submitted!");
+            $("form").submit()
         }
 
     });
+
     $("#start").click(function () {
         var indx = 0;
         for (i = 0; i <= indx; i++) {

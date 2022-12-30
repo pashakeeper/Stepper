@@ -184,17 +184,22 @@ $(document).ready(function () {
             let check1 = $('.step_01 .form_box input:checked').val();
             let text1 = $('.step_01 .form_box .checked').val();
             console.log(check1, text1);
-            $("#main_form").submit(function () { //устанавливаем событие отправки для формы с id=form
+            $("#main_form").submit(function (e) {
+                e.preventDefault();
                 var form_data = $(this).serialize(); //собераем все данные из формы
                 $.ajax({
                     type: 'POST', //Метод отправки
-                    url: 'send.php', //путь до php фаила отправителя
+                    url: '../send.php', //путь до php фаила отправителя
                     data: form_data,
+
                     success: function (data) { // сoбытиe пoслe удaчнoгo oбрaщeния к сeрвeру и пoлучeния oтвeтa
-                        alert('все ок'); // пoкaжeм eё тeкст
+                        alert('все ок');
+                        console.log('good');
+                        console.log(data) // пoкaжeм eё тeкст;
                     }
                 });
             });
+
             // $("form").submit();
         }
 

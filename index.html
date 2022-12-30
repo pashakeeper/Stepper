@@ -15,19 +15,18 @@
 
     <div class="wrapper">
         <div class="container">
+            <section class="step_level step_00" id="step_00">
+                <h1>Помогите нам стать лучше и получите СКИДКУ 10% на аренду мебели!</h1>
+                <p>Пожалуйста ответьте всего на 10 вопросов и получите скидку <b>10% на ваш заказ</b>! Нам важно
+                    становится
+                    лучше и постоянно повышать свой уровень обслуживания. Результаты опроса анонимны и доступны
+                    только
+                    владельцу сайта, для улучшения качества работы нашего сервиса! В конце опроса, Вы получите <b>
+                        промокод,
+                        использовав который при заказе, Вы получите скидку 10%. Спасибо за помощь!</b></p>
+                <a id="start" href="#">Начать опрос сейчас</a>
+            </section>
             <form action="post" id="main_form">
-                <h3></h3>
-                <section class="step_level step_00" id="step_00">
-                    <h1>Помогите нам стать лучше и получите СКИДКУ 10% на аренду мебели!</h1>
-                    <p>Пожалуйста ответьте всего на 10 вопросов и получите скидку <b>10% на ваш заказ</b>! Нам важно
-                        становится
-                        лучше и постоянно повышать свой уровень обслуживания. Результаты опроса анонимны и доступны
-                        только
-                        владельцу сайта, для улучшения качества работы нашего сервиса! В конце опроса, Вы получите <b>
-                            промокод,
-                            использовав который при заказе, Вы получите скидку 10%. Спасибо за помощь!</b></p>
-                    <a id="start" href="#next">Начать опрос сейчас</a>
-                </section>
                 <h3></h3>
                 <section class="step_level step_01" id="step_01">
                     <div class="pre_header">
@@ -39,15 +38,15 @@
                     </div>
                     <div class="form_box">
                         <input class="inputs required" id="step1_1" value="реклама (баннер) в интернете" type="checkbox"
-                            placeholder="">
+                               placeholder="">
                         <label for="step1_1">реклама (баннер) в интернете</label>
                         <input class="inputs required" id="step1_2" value="поисковая система" type="checkbox"
-                            placeholder="">
+                               placeholder="">
                         <label for="step1_2">поисковая система</label>
                         <input class="inputs required" id="step1_3" value="социальные сети" type="checkbox"
-                            placeholder="">
+                               placeholder="">
                         <label for="step1_3">социальные сети</label>
-                        <input type="text" name="step1_1_text" id="step1_1_text" placeholder="свой ответ (кратко)">
+                        <input type="text" name="check_text" id="step1_1_text" placeholder="свой ответ (кратко)">
                     </div>
                 </section>
                 <h3></h3>
@@ -60,13 +59,16 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step2_1" value="Ориентировочно 1 раз в месяц" type="checkbox" placeholder="">
+                        <input name="check_value" id="step2_1" value="Ориентировочно 1 раз в месяц" type="checkbox"
+                               placeholder="">
                         <label for="step2_1">Ориентировочно 1 раз в месяц</label>
-                        <input id="step2_2" value="Ориентировочно 1 раз в квартал" type="checkbox" placeholder="">
+                        <input name="check_value" id="step2_2" value="Ориентировочно 1 раз в квартал" type="checkbox"
+                               placeholder="">
                         <label for="step2_2">Ориентировочно 1 раз в квартал</label>
-                        <input id="step2_3" value="Приблизительно 1 раз в год" type="checkbox" placeholder="">
+                        <input name="check_value" id="step2_3" value="Приблизительно 1 раз в год" type="checkbox"
+                               placeholder="">
                         <label for="step2_3">Приблизительно 1 раз в год</label>
-                        <input id="step2_4" value="Это впервые" type="checkbox" placeholder="">
+                        <input name="check_value" id="step2_4" value="Это впервые" type="checkbox" placeholder="">
                         <label for="step2_4">Это впервые</label>
                     </div>
                 </section>
@@ -80,11 +82,13 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step3_1" value="Доставка, монтаж, демонтаж" type="checkbox" placeholder="">
+                        <input name="check_value" id="step3_1" value="Доставка, монтаж, демонтаж" type="checkbox"
+                               placeholder="">
                         <label for="step3_1">Доставка, монтаж, демонтаж</label>
-                        <input id="step3_2" value="Только доставку" type="checkbox" placeholder="">
+                        <input name="check_value" id="step3_2" value="Только доставку" type="checkbox" placeholder="">
                         <label for="step3_2">Только доставку</label>
-                        <input id="step3_3" value="Предпочитаю самовывоз" type="checkbox" placeholder="">
+                        <input name="check_value" id="step3_3" value="Предпочитаю самовывоз" type="checkbox"
+                               placeholder="">
                         <label for="step3_3">Предпочитаю самовывоз</label>
                     </div>
                 </section>
@@ -98,14 +102,16 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step4_1" value="Совет знакомых" type="checkbox" placeholder="">
+                        <input name="check_value" id="step4_1" value="Совет знакомых" type="checkbox" placeholder="">
                         <label for="step4_1">Совет знакомых</label>
-                        <input id="step4_2" value="Цена оборудования" type="checkbox" placeholder="">
+                        <input name="check_value" id="step4_2" value="Цена оборудования" type="checkbox" placeholder="">
                         <label for="step4_2">Цена оборудования</label>
-                        <input id="step4_3" value="Цена «под ключ», включая монтаж, демонтаж и доставку" type="checkbox"
-                            placeholder="">
+                        <input name="check_value" id="step4_3"
+                               value="Цена «под ключ», включая монтаж, демонтаж и доставку" type="checkbox"
+                               placeholder="">
                         <label for="step4_3">Цена «под ключ», включая монтаж, демонтаж и доставку</label>
-                        <input id="step4_4" value="Чистота оборудования " type="checkbox" placeholder="">
+                        <input name="check_value" id="step4_4" value="Чистота оборудования " type="checkbox"
+                               placeholder="">
                         <label for="step4_4">Чистота оборудования </label>
                     </div>
                 </section>
@@ -115,15 +121,18 @@
                         Помогите нам стать лучше и получите СКИДКУ 10% на аренду мебели!
                     </div>
                     <div class="header">
-                        <h2>5. Какой главный критерий выбора компании предоставляющей Аренду мебели: </h2>
+                        <h2>5. Каким образом Вам удобнее всего и приятнее общаться с менеджером для уточнения деталей?
+                        </h2>
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step5_1" value="По средствам телефонного звонка" type="checkbox" placeholder="">
+                        <input name="check_value" id="step5_1" value="По средствам телефонного звонка" type="checkbox"
+                               placeholder="">
                         <label for="step5_1">По средствам телефонного звонка</label>
-                        <input id="step5_2" value="Предпочитаю месенджеры" type="checkbox" placeholder="">
+                        <input name="check_value" id="step5_2" value="Предпочитаю месенджеры" type="checkbox"
+                               placeholder="">
                         <label for="step5_2">Предпочитаю месенджеры</label>
-                        <input type="text" name="step2_2_text" id="step2_3_text" placeholder="Свой вариант ответа">
+                        <input type="text" name="check_text" id="step2_3_text" placeholder="Свой вариант ответа">
                     </div>
                 </section>
                 <h3></h3>
@@ -132,16 +141,16 @@
                         Помогите нам стать лучше и получите СКИДКУ 10% на аренду мебели!
                     </div>
                     <div class="header">
-                        <h2>6. Какой главный критерий выбора компании предоставляющей Аренду мебели: </h2>
+                        <h2>6. Удобен ли для Вас наш сайт (навигация, дизайн, информация)? </h2>
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step6_1" value="По средствам телефонного звонка" type="checkbox" placeholder="">
-                        <label for="step6_1">По средствам телефонного звонка</label>
-                        <input id="step6_2" value="Предпочитаю месенджеры" type="checkbox" placeholder="">
-                        <label for="step6_2">Предпочитаю месенджеры</label>
-                        <input type="text" name="step3_3_text" id="step3_3_text"
-                            placeholder="не совсем (Пожалуйста, опишите кратко что именно)">
+                        <input name="check_value" id="step6_1" value="Да" type="checkbox" placeholder="">
+                        <label for="step6_1">Да</label>
+                        <input name="check_value" id="step6_2" value="Нет" type="checkbox" placeholder="">
+                        <label for="step6_2">Нет</label>
+                        <input type="text" name="check_text" id="step3_3_text"
+                               placeholder="не совсем (Пожалуйста, опишите кратко что именно)">
                     </div>
                 </section>
                 <h3></h3>
@@ -154,10 +163,10 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step7_1" value="Ничего" type="checkbox" placeholder="">
+                        <input name="check_value" id="step7_1" value="Ничего" type="checkbox" placeholder="">
                         <label for="step7_1">Ничего</label>
-                        <input type="text" name="step4_4_text" id="step4_4_text"
-                            placeholder="Напишите, кратко, пожалуйста">
+                        <input type="text" name="check_text" id="step4_4_text"
+                               placeholder="Напишите, кратко, пожалуйста">
                     </div>
                 </section>
                 <h3></h3>
@@ -170,9 +179,9 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step8_1" value="мужской" type="checkbox" placeholder="">
+                        <input name="check_value" id="step8_1" value="мужской" type="checkbox" placeholder="">
                         <label for="step8_1">Мужской</label>
-                        <input id="step8_2" value="Женский" type="checkbox" placeholder="">
+                        <input name="check_value" id="step8_2" value="Женский" type="checkbox" placeholder="">
                         <label for="step8_2">Женский</label>
                     </div>
                 </section>
@@ -186,15 +195,15 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step9_1" value="Меньше 18 лет" type="checkbox" placeholder="">
+                        <input name="check_value" id="step9_1" value="Меньше 18 лет" type="checkbox" placeholder="">
                         <label for="step9_1">Меньше 18 лет</label>
-                        <input id="step9_2" value="18 – 24" type="checkbox" placeholder="">
+                        <input name="check_value" id="step9_2" value="18 – 24" type="checkbox" placeholder="">
                         <label for="step9_2">18 – 24</label>
-                        <input id="step9_3" value="25 – 34" type="checkbox" placeholder="">
+                        <input name="check_value" id="step9_3" value="25 – 34" type="checkbox" placeholder="">
                         <label for="step9_3">25 – 34</label>
-                        <input id="step9_4" value="35 – 44" type="checkbox" placeholder="">
+                        <input name="check_value" id="step9_4" value="35 – 44" type="checkbox" placeholder="">
                         <label for="step9_4">35 – 44</label>
-                        <input id="step9_5" value="45 и старше" type="checkbox" placeholder="">
+                        <input name="check_value" id="step9_5" value="45 и старше" type="checkbox" placeholder="">
                         <label for="step9_5">45 и старше</label>
                     </div>
                 </section>
@@ -208,27 +217,34 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input type="text" name="step5_5_text" id="step5_5_text"
-                            placeholder="Напишите, кратко, пожалуйста">
+                        <input type="text" name="check_text" id="step5_5_text"
+                               placeholder="Напишите, кратко, пожалуйста">
                     </div>
                 </section>
                 <h3></h3>
                 <section class="step_level step_11" id="step_11">
                     <div class="header">
-                        <h2>11. ВАШ ПРОМОКОД <span>SNP_02042201</span> ! Назовите его оператору при заказе!*</h2>
+                        <h2>11. ВАШ ПРОМОКОД <br><span>Нажмите отправить что-бы увидеть код! <i class="counter"></i>
+                            </span>
+                            <br>Назовите его
+                            оператору при заказе!*
+                        </h2>
                     </div>
                 </section>
+                <div class="alert error" id="alert">
+                    Обязательный вопрос</div>
             </form>
+
         </div>
     </div>
 
 
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
-        integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/jquery.steps.min.js"></script>
     <script src="js/stepper.js"></script>
 </body>

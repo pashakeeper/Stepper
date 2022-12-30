@@ -609,7 +609,7 @@ body {
 
 .steps ul li.done {
   width: 100%;
-  max-width: 9.5%;
+  max-width: 10%;
 }
 
 h1 {
@@ -656,7 +656,6 @@ h1 {
 }
 
 .step_level h2 {
-  white-space: pre-wrap;
   font-size: 24px;
   padding: 15px 0 0 0;
   font-weight: 600;
@@ -690,7 +689,7 @@ h1 {
   position: relative;
 }
 
-.form_box input + label {
+.form_box input+label {
   display: inline-flex;
   align-items: center;
   user-select: none;
@@ -720,14 +719,14 @@ h1 {
   border-color: #ccc;
 }
 
-.form_box input:checked + label {
+.form_box input:checked+label {
   background: #3363e2;
   border-color: #1c4bc6;
   color: #fff;
   animation: pulse 0.3s ease;
 }
 
-.form_box input:checked + label::after {
+.form_box input:checked+label::after {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -795,9 +794,26 @@ h1 {
   line-height: 150%;
   letter-spacing: 0.5px;
   font-size: 16px;
-  max-width: 600px;
+  max-width: 100% !important;
+  width: 100%;
   justify-content: center;
   text-align: center;
+  z-index: 10;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../img/bg.jpeg);
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.step_00 p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pre_header {
@@ -830,7 +846,7 @@ h1 {
 .actions ul {
   display: flex;
   position: absolute;
-  right: 10px;
+  right: 0;
   bottom: 3rem;
 }
 
@@ -884,6 +900,7 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
 .actions::before {
   content: "";
   position: fixed;
@@ -892,8 +909,8 @@ h1 {
   border-bottom: 1px solid rgba(51, 61, 96, 0.15);
   left: 0;
 }
-.actions ul li a:hover {
-}
+
+.actions ul li a:hover {}
 
 .actions ul li.finish {
   width: auto;
@@ -910,12 +927,36 @@ h1 {
   background-color: #3363e2;
   border: 1px solid #1c4bc6;
 }
+
 .actions ul li.finish a {
   color: #fff;
 }
+
 .actions ul li.finish:hover {
   background: #1c4bc6;
 }
+
 .step_level h2 span {
   color: red;
+}
+
+.alert {
+  position: fixed;
+  bottom: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  left: 50%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #f0565a;
+  height: 39px;
+  color: #fff;
+  text-align: center;
+  transform: translateX(-50%);
+  display: none;
+  line-height: 39px;
 }

@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     let stepsWizard = $("form");
     stepsWizard.steps({
         headerTag: "h3",
@@ -7,53 +6,211 @@ $(document).ready(function () {
         transitionEffect: "slideLeft",
         autoFocus: true,
         transitionEffectSpeed: 100,
+        enableKeyNavigation: true,
+        // startIndex: 10,
         labels: {
             next: "<i class='fa fa-angle-right'></i>",
             previous: "<i class='fa fa-angle-left'></i>",
             finish: "Отправить"
 
         },
-        onStepChanging: function (event, currentIndex, newIndex) {
-
-        },
-        onFinishing: function (event, currentIndex) {
-
-        },
-        onStepChange: function (event, currentIndex, newIndex) {
-            if (stepsWizard.steps("getCurrentIndex") == 0) {
-                $("ul[role='menu']").hide();
-            }
-
-        },
         onInit: function (event, current) {
             $('.actions ul li:last-child').addClass('finish')
             $('.actions a[href=\\#finish]').attr('id', 'FinishButton');
         },
+        onStepChanging: function (event, currentIndex, newIndex) {
+            if (currentIndex == 0) {
+                if (!$('.step_01 input').is(':checked') && !$('#step1_1_text').val()) {
+                    console.log('Cancel');
+                    $('.alert').fadeIn();
+                    return false;
+
+                }
+                else {
+                    $('.alert').fadeOut();
+                    return true;
+
+                }
+            }
+            if (currentIndex == 1) {
+                if (!$('.step_02 input').is(':checked')) {
+                    console.log('Cancel');
+                    $('.alert').fadeIn();
+                    return false;
+
+                }
+                else {
+                    $('.alert').fadeOut();
+                    return true;
+                }
+            }
+            if (currentIndex == 2) {
+                if (!$('.step_03 input').is(':checked')) {
+                    console.log('Cancel');
+                    $('.alert').fadeIn();
+                    return false;
+
+                }
+                else {
+                    $('.alert').fadeOut();
+                    return true;
+                }
+            }
+            if (currentIndex == 3) {
+                if (!$('.step_04 input').is(':checked')) {
+                    console.log('Cancel');
+                    $('.alert').fadeIn();
+                    return false;
+
+                }
+                else {
+                    $('.alert').fadeOut();
+                    return true;
+                }
+            }
+            if (currentIndex == 4) {
+                if (!$('.step_05 input').is(':checked') && !$('#step2_3_text').val()) {
+                    console.log('Cancel');
+                    $('.alert').fadeIn();
+                    return false;
+
+                }
+                else {
+                    $('.alert').fadeOut();
+                    return true;
+                }
+            }
+            if (currentIndex == 5) {
+                if (!$('.step_06 input').is(':checked') && !$('#step3_3_text').val()) {
+                    console.log('Cancel');
+                    $('.alert').fadeIn();
+                    return false;
+
+                }
+                else {
+                    $('.alert').fadeOut();
+                    return true;
+                }
+            }
+            if (currentIndex == 6) {
+                if (!$('.step_07 input').is(':checked') && !$('#step4_4_text').val()) {
+                    console.log('Cancel');
+                    $('.alert').fadeIn();
+                    return false;
+
+                }
+                else {
+                    $('.alert').fadeOut();
+                    return true;
+                }
+            }
+            if (currentIndex == 7) {
+                if (!$('.step_08 input').is(':checked')) {
+                    console.log('Cancel');
+                    $('.alert').fadeIn();
+                    return false;
+
+                }
+                else {
+                    $('.alert').fadeOut();
+                    return true;
+                }
+            }
+            if (currentIndex == 8) {
+                if (!$('.step_09 input').is(':checked')) {
+                    console.log('Cancel');
+                    $('.alert').fadeIn();
+                    return false;
+
+                }
+                else {
+                    $('.alert').fadeOut();
+                    return true;
+                }
+            }
+            if (currentIndex == 9) {
+                if (!$('#step5_5_text').val()) {
+                    console.log('Cancel');
+                    $('.alert').fadeIn();
+                    return false;
+
+                }
+                else {
+                    $('.alert').fadeOut();
+                    return true;
+                }
+            }
+
+            console.log(currentIndex)
+            return true;
+        },
+        onFinishing: function (event, currentIndex) {
+            console.log('finishing');
+
+            if (currentIndex == 10) {
+                if (window.localStorage) {
+                    var value = localStorage.getItem('count'),
+                        newvalue = isFinite(value) ? ++value : 0;
+                    localStorage.setItem('count', newvalue);
+
+                }
+                var d = new Date();
+                var month = d.getMonth() + 1;
+                var day = d.getDate();
+                var output = d.getFullYear() +
+                    (month < 10 ? '0' : '') + month +
+                    (day < 10 ? '0' : '') + day;
+                $('.step_11 h2 span').html('SNP_' + output + newvalue);
+                return true;
+            }
+
+
+
+        },
         onFinished: function (event, currentIndex) {
-            alert("Submitted!");
-            $("form").submit()
+            $.getJSON("https://api.ipify.org?format=json", function (data) {
+                document.cookie = 'ip = ' + data.ip + '1';
+
+            })
+            function getCookie(name) {
+                let matches = document.cookie.match(new RegExp(name));
+                return matches;
+
+            }
+            getCookie()
+            if (document.cookie == document.cookie) {
+                $('.finish').hide()
+            }
+            let check1 = $('.step_01 .form_box input:checked').val();
+            let text1 = $('.step_01 .form_box .checked').val();
+            console.log(check1, text1);
+            $("#main_form").submit(function () { //устанавливаем событие отправки для формы с id=form
+                var form_data = $(this).serialize(); //собераем все данные из формы
+                $.ajax({
+                    type: 'POST', //Метод отправки
+                    url: 'send.php', //путь до php фаила отправителя
+                    data: form_data,
+                    success: function (data) { // сoбытиe пoслe удaчнoгo oбрaщeния к сeрвeру и пoлучeния oтвeтa
+                        alert('все ок'); // пoкaжeм eё тeкст
+                    }
+                });
+            });
+            // $("form").submit();
         }
 
     });
 
-    $("#start").click(function () {
-        var indx = 0;
-        for (i = 0; i <= indx; i++) {
-            stepsWizard.steps("next");
-        }
-        $("ul[role='menu']").show()
+    $("#start").click(function (e) {
+        e.preventDefault();
+        $('.step_00').hide(400);
     })
 
 
 
-    $('form').on('change', function () {
-        let sm = $('input:checked').val();
+    $('#main_form').on('change', function (e) {
+        let sm = e.target.value
         console.log(sm);
     })
-
-    if (stepsWizard.steps("getCurrentIndex") == 0) {
-        $("ul[role='menu']").hide();
-    }
     // inputs
     textInInputs();
     // Checkboxes
@@ -92,29 +249,38 @@ function textInInputs() {
 function checkBoxes() {
     $('.step_01 input').click(function () {
         $('.step_01 input').not(this).prop('checked', false);
+        $('.alert').fadeOut();
     });
     $('.step_02 input').on('change', function () {
         $('.step_02 input').not(this).prop('checked', false);
+        $('.alert').fadeOut();
     });
     $('.step_03 input').on('change', function () {
         $('.step_03 input').not(this).prop('checked', false);
+        $('.alert').fadeOut();
     });
     $('.step_04 input').on('change', function () {
         $('.step_04 input').not(this).prop('checked', false);
+        $('.alert').fadeOut();
     });
     $('.step_05 input').on('change', function () {
         $('.step_05 input').not(this).prop('checked', false);
+        $('.alert').fadeOut();
     });
     $('.step_06 input').on('change', function () {
         $('.step_06 input').not(this).prop('checked', false);
+        $('.alert').fadeOut();
     });
     $('.step_07 input').on('change', function () {
         $('.step_07 input').not(this).prop('checked', false);
+        $('.alert').fadeOut();
     });
     $('.step_08 input').on('change', function () {
         $('.step_08 input').not(this).prop('checked', false);
+        $('.alert').fadeOut();
     });
     $('.step_09 input').on('change', function () {
         $('.step_09 input').not(this).prop('checked', false);
+        $('.alert').fadeOut();
     });
 }

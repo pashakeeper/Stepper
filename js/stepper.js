@@ -17,8 +17,10 @@ $(document).ready(function () {
         onInit: function (event, current) {
             $('.actions ul li:last-child').addClass('finish')
             $('.actions a[href=\\#finish]').attr('id', 'FinishButton');
+            $('.actions a[href=\\#finish]').attr('type', 'submit');
         },
         onStepChanging: function (event, currentIndex, newIndex) {
+
             if (currentIndex == 0) {
                 if (!$('.step_01 input').is(':checked') && !$('#step1_1_text').val()) {
                     console.log('Cancel');
@@ -140,13 +142,10 @@ $(document).ready(function () {
                     return true;
                 }
             }
-
-            console.log(currentIndex)
             return true;
         },
         onFinishing: function (event, currentIndex) {
             console.log('finishing');
-
             if (currentIndex == 10) {
                 if (window.localStorage) {
                     var value = localStorage.getItem('count'),
@@ -154,68 +153,62 @@ $(document).ready(function () {
                     localStorage.setItem('count', newvalue);
 
                 }
+                window.localStorage.clear();
+
                 var d = new Date();
                 var month = d.getMonth() + 1;
                 var day = d.getDate();
-                var output = d.getFullYear() +
-                    (month < 10 ? '0' : '') + month +
+                var random = Math.random() * 100;
+                var output = d.getFullYear() + '/' +
+                    (month < 10 ? '0' : '') + month + '/' +
                     (day < 10 ? '0' : '') + day;
-                $('.step_11 h2 span').html('SNP_' + output + newvalue);
+
+                $('.step_11 h2 span').html('SNP_' + output + '/' + newvalue + random.toFixed());
                 return true;
             }
 
-
-
         },
         onFinished: function (event, currentIndex) {
-            $.getJSON("https://api.ipify.org?format=json", function (data) {
-                document.cookie = 'ip = ' + data.ip + '1';
-
-            })
-            function getCookie(name) {
-                let matches = document.cookie.match(new RegExp(name));
-                return matches;
-
-            }
-            getCookie()
-            if (document.cookie == document.cookie) {
-                $('.finish').hide()
-            }
-            let check1 = $('.step_01 .form_box input:checked').val();
-            let text1 = $('.step_01 .form_box .checked').val();
-            console.log(check1, text1);
-            $("#main_form").submit(function (e) {
+            $("form").submit(function (e) {
                 e.preventDefault();
                 var form_data = $(this).serialize(); //собераем все данные из формы
                 $.ajax({
                     type: 'POST', //Метод отправки
                     url: '../send.php', //путь до php фаила отправителя
                     data: form_data,
-
                     success: function (data) { // сoбытиe пoслe удaчнoгo oбрaщeния к сeрвeру и пoлучeния oтвeтa
-                        alert('все ок');
                         console.log('good');
                         console.log(data) // пoкaжeм eё тeкст;
+                    },
+                    error: function () {
+                        alert('Ошибка!');
                     }
                 });
             });
+            $('.finish').remove();
 
             // $("form").submit();
         }
 
     });
+    $('#name').on('keypress', function () {
+        let userName = $('#name').val();
+        if (userName.length > 1) {
+            console.log(userName)
+            $('#start').fadeIn(400);
+            $("#start").click(function (e) {
+                $('#user_name').attr('value', userName)
+                e.preventDefault();
+                $('.step_00').hide(400);
+            });
 
-    $("#start").click(function (e) {
-        e.preventDefault();
-        $('.step_00').hide(400);
-    })
-
-
+        }
+    });
 
     $('#main_form').on('change', function (e) {
         let sm = e.target.value
         console.log(sm);
-    })
+    });
     // inputs
     textInInputs();
     // Checkboxes

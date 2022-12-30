@@ -24,9 +24,13 @@
                     владельцу сайта, для улучшения качества работы нашего сервиса! В конце опроса, Вы получите <b>
                         промокод,
                         использовав который при заказе, Вы получите скидку 10%. Спасибо за помощь!</b></p>
+                <div class="form_box">
+                    <input id="name" type="text" placeholder="Ваше Имя">
+                </div>
                 <a id="start" href="#">Начать опрос сейчас</a>
             </section>
             <form action="post" id="main_form">
+                <input type="text" id="user_name">
                 <h3></h3>
                 <section class="step_level step_01" id="step_01">
                     <div class="pre_header">
@@ -240,11 +244,10 @@
 
 
 
+
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
             integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
-            integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/jquery.cookie.js"></script>
     <script src="js/jquery.steps.min.js"></script>
     <script src="js/stepper.js"></script>
 </body>

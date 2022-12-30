@@ -7,7 +7,7 @@ $(document).ready(function () {
         autoFocus: true,
         transitionEffectSpeed: 100,
         enableKeyNavigation: true,
-        // startIndex: 10,
+        startIndex: 10,
         labels: {
             next: "<i class='fa fa-angle-right'></i>",
             previous: "<i class='fa fa-angle-left'></i>",
@@ -169,8 +169,8 @@ $(document).ready(function () {
 
         },
         onFinished: function (event, currentIndex) {
-            $("form").submit(function (e) {
-                e.preventDefault();
+            $("form").submit(function () {
+                // e.preventDefault();
                 var form_data = $(this).serialize(); //собераем все данные из формы
                 $.ajax({
                     type: 'POST', //Метод отправки
@@ -186,12 +186,11 @@ $(document).ready(function () {
                 });
             });
             $('.finish').remove();
-
             // $("form").submit();
         }
 
     });
-    $('#name').on('keypress', function () {
+    $('#name').on('change', function () {
         let userName = $('#name').val();
         if (userName.length > 1) {
             console.log(userName)

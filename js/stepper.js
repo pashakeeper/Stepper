@@ -7,7 +7,7 @@ $(document).ready(function () {
         autoFocus: true,
         transitionEffectSpeed: 100,
         enableKeyNavigation: true,
-        startIndex: 10,
+        // startIndex: 10,
         labels: {
             next: "<i class='fa fa-angle-right'></i>",
             previous: "<i class='fa fa-angle-left'></i>",

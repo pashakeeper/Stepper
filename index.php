@@ -29,7 +29,7 @@
                 </div>
                 <a id="start" href="#">Начать опрос сейчас</a>
             </section>
-            <form action method="POST" id="main_form">
+            <form method="POST" id="main_form">
                 <input name="name" type="text" id="user_name">
                 <h3></h3>
                 <section class="step_level step_01" id="step_01">
@@ -41,16 +41,16 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input class="inputs required" id="step1_1" value="реклама (баннер) в интернете" type="checkbox"
+                        <input class="inputs required" name="check_text_1" id="step1_1" value="реклама (баннер) в интернете" type="checkbox"
                                placeholder="">
                         <label for="step1_1">реклама (баннер) в интернете</label>
-                        <input class="inputs required" id="step1_2" value="поисковая система" type="checkbox"
+                        <input class="inputs required" name="check_text_1" id="step1_2" value="поисковая система" type="checkbox"
                                placeholder="">
                         <label for="step1_2">поисковая система</label>
-                        <input class="inputs required" id="step1_3" value="социальные сети" type="checkbox"
+                        <input class="inputs required" name="check_text_1" id="step1_3" value="социальные сети" type="checkbox"
                                placeholder="">
                         <label for="step1_3">социальные сети</label>
-                        <input type="text" name="check_text" id="step1_1_text" placeholder="свой ответ (кратко)">
+                        <input type="text" name="check_text_1" id="step1_1_text" placeholder="свой ответ (кратко)">
                     </div>
                 </section>
                 <h3></h3>
@@ -63,16 +63,16 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input name="check_value" id="step2_1" value="Ориентировочно 1 раз в месяц" type="checkbox"
+                        <input id="step2_1" value="Ориентировочно 1 раз в месяц" type="checkbox"
                                placeholder="">
                         <label for="step2_1">Ориентировочно 1 раз в месяц</label>
-                        <input name="check_value" id="step2_2" value="Ориентировочно 1 раз в квартал" type="checkbox"
+                        <input id="step2_2" value="Ориентировочно 1 раз в квартал" type="checkbox"
                                placeholder="">
                         <label for="step2_2">Ориентировочно 1 раз в квартал</label>
-                        <input name="check_value" id="step2_3" value="Приблизительно 1 раз в год" type="checkbox"
+                        <input id="step2_3" value="Приблизительно 1 раз в год" type="checkbox"
                                placeholder="">
                         <label for="step2_3">Приблизительно 1 раз в год</label>
-                        <input name="check_value" id="step2_4" value="Это впервые" type="checkbox" placeholder="">
+                        <input id="step2_4" value="Это впервые" type="checkbox" placeholder="">
                         <label for="step2_4">Это впервые</label>
                     </div>
                 </section>
@@ -86,12 +86,12 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input name="check_value" id="step3_1" value="Доставка, монтаж, демонтаж" type="checkbox"
+                        <input id="step3_1" value="Доставка, монтаж, демонтаж" type="checkbox"
                                placeholder="">
                         <label for="step3_1">Доставка, монтаж, демонтаж</label>
-                        <input name="check_value" id="step3_2" value="Только доставку" type="checkbox" placeholder="">
+                        <input id="step3_2" value="Только доставку" type="checkbox" placeholder="">
                         <label for="step3_2">Только доставку</label>
-                        <input name="check_value" id="step3_3" value="Предпочитаю самовывоз" type="checkbox"
+                        <input id="step3_3" value="Предпочитаю самовывоз" type="checkbox"
                                placeholder="">
                         <label for="step3_3">Предпочитаю самовывоз</label>
                     </div>
@@ -106,15 +106,15 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input name="check_value" id="step4_1" value="Совет знакомых" type="checkbox" placeholder="">
+                        <input id="step4_1" value="Совет знакомых" type="checkbox" placeholder="">
                         <label for="step4_1">Совет знакомых</label>
-                        <input name="check_value" id="step4_2" value="Цена оборудования" type="checkbox" placeholder="">
+                        <input id="step4_2" value="Цена оборудования" type="checkbox" placeholder="">
                         <label for="step4_2">Цена оборудования</label>
-                        <input name="check_value" id="step4_3"
+                        <input id="step4_3"
                                value="Цена «под ключ», включая монтаж, демонтаж и доставку" type="checkbox"
                                placeholder="">
                         <label for="step4_3">Цена «под ключ», включая монтаж, демонтаж и доставку</label>
-                        <input name="check_value" id="step4_4" value="Чистота оборудования " type="checkbox"
+                        <input id="step4_4" value="Чистота оборудования " type="checkbox"
                                placeholder="">
                         <label for="step4_4">Чистота оборудования </label>
                     </div>
@@ -130,10 +130,10 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input name="check_value" id="step5_1" value="По средствам телефонного звонка" type="checkbox"
+                        <input id="step5_1" value="По средствам телефонного звонка" type="checkbox"
                                placeholder="">
                         <label for="step5_1">По средствам телефонного звонка</label>
-                        <input name="check_value" id="step5_2" value="Предпочитаю месенджеры" type="checkbox"
+                        <input id="step5_2" value="Предпочитаю месенджеры" type="checkbox"
                                placeholder="">
                         <label for="step5_2">Предпочитаю месенджеры</label>
                         <input type="text" name="check_text" id="step2_3_text" placeholder="Свой вариант ответа">
@@ -149,9 +149,9 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input name="check_value" id="step6_1" value="Да" type="checkbox" placeholder="">
+                        <input id="step6_1" value="Да" type="checkbox" placeholder="">
                         <label for="step6_1">Да</label>
-                        <input name="check_value" id="step6_2" value="Нет" type="checkbox" placeholder="">
+                        <input id="step6_2" value="Нет" type="checkbox" placeholder="">
                         <label for="step6_2">Нет</label>
                         <input type="text" name="check_text" id="step3_3_text"
                                placeholder="не совсем (Пожалуйста, опишите кратко что именно)">
@@ -167,7 +167,7 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input name="check_value" id="step7_1" value="Ничего" type="checkbox" placeholder="">
+                        <input id="step7_1" value="Ничего" type="checkbox" placeholder="">
                         <label for="step7_1">Ничего</label>
                         <input type="text" name="check_text" id="step4_4_text"
                                placeholder="Напишите, кратко, пожалуйста">
@@ -183,9 +183,9 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input name="check_value" id="step8_1" value="мужской" type="checkbox" placeholder="">
+                        <input id="step8_1" value="мужской" type="checkbox" placeholder="">
                         <label for="step8_1">Мужской</label>
-                        <input name="check_value" id="step8_2" value="Женский" type="checkbox" placeholder="">
+                        <input id="step8_2" value="Женский" type="checkbox" placeholder="">
                         <label for="step8_2">Женский</label>
                     </div>
                 </section>
@@ -199,15 +199,15 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input name="check_value" id="step9_1" value="Меньше 18 лет" type="checkbox" placeholder="">
+                        <input id="step9_1" value="Меньше 18 лет" type="checkbox" placeholder="">
                         <label for="step9_1">Меньше 18 лет</label>
-                        <input name="check_value" id="step9_2" value="18 – 24" type="checkbox" placeholder="">
+                        <input id="step9_2" value="18 – 24" type="checkbox" placeholder="">
                         <label for="step9_2">18 – 24</label>
-                        <input name="check_value" id="step9_3" value="25 – 34" type="checkbox" placeholder="">
+                        <input id="step9_3" value="25 – 34" type="checkbox" placeholder="">
                         <label for="step9_3">25 – 34</label>
-                        <input name="check_value" id="step9_4" value="35 – 44" type="checkbox" placeholder="">
+                        <input id="step9_4" value="35 – 44" type="checkbox" placeholder="">
                         <label for="step9_4">35 – 44</label>
-                        <input name="check_value" id="step9_5" value="45 и старше" type="checkbox" placeholder="">
+                        <input id="step9_5" value="45 и старше" type="checkbox" placeholder="">
                         <label for="step9_5">45 и старше</label>
                     </div>
                 </section>
@@ -237,6 +237,7 @@
                 </section>
                 <div class="alert error" id="alert">
                     Обязательный вопрос</div>
+                    
             </form>
 
         </div>

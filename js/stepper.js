@@ -7,16 +7,16 @@ $(document).ready(function () {
     autoFocus: true,
     transitionEffectSpeed: 100,
     enableKeyNavigation: true,
-    // startIndex: 10,
+    enableFinishButton: false,
+    startIndex: 9,
     labels: {
       next: "<i class='fa fa-angle-right'></i>",
       previous: "<i class='fa fa-angle-left'></i>",
-      finish: "Отправить",
+      finish: "",
     },
     onInit: function (event, current) {
       $(".actions ul li:last-child").addClass("finish");
       $(".actions a[href=\\#finish]").attr("id", "FinishButton");
-      $(".actions a[href=\\#finish]").attr("type", "submit");
     },
     onStepChanging: function (event, currentIndex, newIndex) {
       if (currentIndex == 0) {
@@ -121,67 +121,63 @@ $(document).ready(function () {
       }
       return true;
     },
-    onFinishing: function (event, currentIndex) {
-      if (currentIndex == 10) {
-        if (window.localStorage) {
-          var value = localStorage.getItem("count"),
-            newvalue = isFinite(value) ? ++value : 0;
-          localStorage.setItem("count", newvalue);
-        }
-        window.localStorage.clear();
-
-        var d = new Date();
-        var month = d.getMonth() + 1;
-        var day = d.getDate();
-        var random = Math.random() * 100;
-        var output =
-          d.getFullYear() +
-          "/" +
-          (month < 10 ? "0" : "") +
-          month +
-          "/" +
-          (day < 10 ? "0" : "") +
-          day;
-
-        $(".step_11 h2 span").html(
-          "SNP_" + output + "/" + newvalue + random.toFixed()
-        );
-        return true;
+    onStepChanged: function (event, currentIndex) {
+      if (currentIndex === 10) {
+        stepsWizard.find('a[href="#finish"]').remove();
+        $("ul[role='menu']").append('<input type="submit">');
+        $(".actions input").addClass("finish");
       }
     },
+    onFinishing: function (event, currentIndex) {
+      console.log("finishing");
+      console.log(currentIndex);
+    },
     onFinished: function (event, currentIndex) {
-      $("#main_form").submit(function () {
-        var data = $(this).serialize();
-        $.ajax({
-          type: "POST",
-          url: "../send.php",
-          dataType: "json", 
-          data: data,
-          beforeSend: function (data) {
-            form.find('input[type="submit"]').attr("disabled", "disabled");
-          },
-          success: function (data) {
-            console.log(data);
-            console.log("work");
-            if (data["error"]) {
-              alert(data["error"]);
-            } else {
-              alert("Письмo было отправлено, проверьте почту.");
-            }
-          },
-          error: function (xhr, ajaxOptions, thrownError) {
-            console.log(error);
-          },
-          complete: function (data) {
-            form.find('input[type="submit"]').prop("disabled", false);
-          },
-        });
-      });   
-      console.log('finish');
-      $(".finish").remove();
-      // $("form").submit();
+      console.log("finish");
+
+      //   $("form").submit();
     },
   });
+  function formSend() {
+    $("#main_form").submit(function (e) {
+      if (window.localStorage) {
+        var value = localStorage.getItem("count"),
+          newvalue = isFinite(value) ? ++value : 0;
+        localStorage.setItem("count", newvalue);
+      }
+      window.localStorage.clear();
+
+      var d = new Date();
+      var month = d.getMonth() + 1;
+      var day = d.getDate();
+      var random = Math.random() * 100;
+      var output =
+        d.getFullYear() +
+        "/" +
+        (month < 10 ? "0" : "") +
+        month +
+        "/" +
+        (day < 10 ? "0" : "") +
+        day;
+
+      $(".step_11 h2 span").html(
+        "SNP_" + output + "/" + newvalue + random.toFixed()
+      );
+      $("input.finish").remove();
+      e.preventDefault();
+      var data = $(this).serialize();
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        dataType: "html",
+        data: data,
+        success: function (response) {
+          console.log(response);
+        },
+      });
+    });
+  }
+  formSend();
   $("#name").on("change", function () {
     let userName = $("#name").val();
     if (userName.length > 1) {
@@ -192,8 +188,6 @@ $(document).ready(function () {
         e.preventDefault();
         $(".step_00").hide(400);
       });
-      $("#user_name").attr("value", userName);
-      console.log($("#user_name").val());
     }
   });
 

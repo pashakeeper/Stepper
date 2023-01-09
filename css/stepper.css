@@ -926,7 +926,7 @@ h1 {
 
 .actions ul li a:hover {}
 
-.actions ul li.finish {
+.actions ul input.finish {
   width: auto;
   height: auto;
   font-size: 19px;
@@ -940,9 +940,24 @@ h1 {
   justify-content: center;
   background-color: #3363e2;
   border: 1px solid #1c4bc6;
+  border-radius: 5px;
+  color: #fff;
 }
 
-.actions ul li.finish a {
+.actions ul li.finish  {
+  
+  /* display: none !important; */
+}
+.actions ul input {
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;    
+  cursor: pointer;
+  border: 0;
+  font-size: 18px;
   color: #fff;
 }
 

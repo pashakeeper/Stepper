@@ -29,8 +29,8 @@
                 </div>
                 <a id="start" href="#">Начать опрос сейчас</a>
             </section>
-            <form action="send.php" method="POST" id="main_form">
-                <input type="text" id="user_name">
+            <form action method="POST" id="main_form">
+                <input name="name" type="text" id="user_name">
                 <h3></h3>
                 <section class="step_level step_01" id="step_01">
                     <div class="pre_header">

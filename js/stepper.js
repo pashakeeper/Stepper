@@ -8,7 +8,7 @@ $(document).ready(function () {
     transitionEffectSpeed: 100,
     enableKeyNavigation: true,
     enableFinishButton: false,
-    startIndex: 9,
+    // startIndex: 9,
     labels: {
       next: "<i class='fa fa-angle-right'></i>",
       previous: "<i class='fa fa-angle-left'></i>",
@@ -163,6 +163,7 @@ $(document).ready(function () {
       $(".step_11 h2 span").html(
         "SNP_" + output + "/" + newvalue + random.toFixed()
       );
+      $('.promocode').attr("value", "SNP_" + output + "/" + newvalue + random.toFixed())
       $("input.finish").remove();
       e.preventDefault();
       var data = $(this).serialize();

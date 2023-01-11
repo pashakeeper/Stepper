@@ -943,7 +943,9 @@ h1 {
   border-radius: 5px;
   color: #fff;
 }
-
+ .promocode {
+  display: none;
+ }
 .actions ul li.finish  {
   
   /* display: none !important; */

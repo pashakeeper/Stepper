@@ -65,13 +65,13 @@
                     <div class="form_box">
                         <input id="step2_1" value="Ориентировочно 1 раз в месяц" type="checkbox" placeholder="">
                         <label for="step2_1">Ориентировочно 1 раз в месяц</label>
-                        <input id="step2_2" name="check2" value="Ориентировочно 1 раз в квартал" type="checkbox"
+                        <input id="step2_2" name="check2[]" value="Ориентировочно 1 раз в квартал" type="checkbox"
                             placeholder="">
                         <label for="step2_2">Ориентировочно 1 раз в квартал</label>
-                        <input id="step2_3" name="check2" value="Приблизительно 1 раз в год" type="checkbox"
+                        <input id="step2_3" name="check2[]" value="Приблизительно 1 раз в год" type="checkbox"
                             placeholder="">
                         <label for="step2_3">Приблизительно 1 раз в год</label>
-                        <input id="step2_4" name="check2" value="Это впервые" type="checkbox" placeholder="">
+                        <input id="step2_4" name="check2[]" value="Это впервые" type="checkbox" placeholder="">
                         <label for="step2_4">Это впервые</label>
                     </div>
                 </section>
@@ -86,11 +86,11 @@
                     </div>
                     <div class="form_box">
                         <input id="step3_1" value="Доставка, монтаж, демонтаж" type="checkbox" placeholder=""
-                            name="check3">
+                            name="check3[]">
                         <label for="step3_1">Доставка, монтаж, демонтаж</label>
-                        <input id="step3_2" name="check3" value="Только доставку" type="checkbox" placeholder="">
+                        <input id="step3_2" name="check3[]" value="Только доставку" type="checkbox" placeholder="">
                         <label for="step3_2">Только доставку</label>
-                        <input id="step3_3" name="check3" value="Предпочитаю самовывоз" type="checkbox" placeholder="">
+                        <input id="step3_3" name="check3[]" value="Предпочитаю самовывоз" type="checkbox" placeholder="">
                         <label for="step3_3">Предпочитаю самовывоз</label>
                     </div>
                 </section>
@@ -104,14 +104,14 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step4_1" name="check4" value="Совет знакомых" type="checkbox" placeholder="">
+                        <input id="step4_1" name="check4[]" value="Совет знакомых" type="checkbox" placeholder="">
                         <label for="step4_1">Совет знакомых</label>
-                        <input id="step4_2" name="check4" value="Цена оборудования" type="checkbox" placeholder="">
+                        <input id="step4_2" name="check4[]" value="Цена оборудования" type="checkbox" placeholder="">
                         <label for="step4_2">Цена оборудования</label>
-                        <input id="step4_3" name="check4" value="Цена «под ключ», включая монтаж, демонтаж и доставку"
+                        <input id="step4_3" name="check4[]" value="Цена «под ключ», включая монтаж, демонтаж и доставку"
                             type="checkbox" placeholder="">
                         <label for="step4_3">Цена «под ключ», включая монтаж, демонтаж и доставку</label>
-                        <input id="step4_4" name="check4" value="Чистота оборудования " type="checkbox" placeholder="">
+                        <input id="step4_4" name="check4[]" value="Чистота оборудования " type="checkbox" placeholder="">
                         <label for="step4_4">Чистота оборудования </label>
                     </div>
                 </section>
@@ -126,9 +126,9 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step5_1" name="check5" value="По средствам телефонного звонка" type="checkbox" placeholder="">
+                        <input id="step5_1" name="check5[]" value="По средствам телефонного звонка" type="checkbox" placeholder="">
                         <label for="step5_1">По средствам телефонного звонка</label>
-                        <input id="step5_2" name="check5" value="Предпочитаю месенджеры" type="checkbox" placeholder="">
+                        <input id="step5_2" name="check5[]" value="Предпочитаю месенджеры" type="checkbox" placeholder="">
                         <label for="step5_2">Предпочитаю месенджеры</label>
                         <input type="text" name="checktext2" id="step2_3_text" placeholder="Свой вариант ответа">
                     </div>
@@ -143,9 +143,9 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step6_1" name="check6" value="Да" type="checkbox" placeholder="">
+                        <input id="step6_1" name="check6[]" value="Да" type="checkbox" placeholder="">
                         <label for="step6_1">Да</label>
-                        <input id="step6_2" name="check6" value="Нет" type="checkbox" placeholder="">
+                        <input id="step6_2" name="check6[]" value="Нет" type="checkbox" placeholder="">
                         <label for="step6_2">Нет</label>
                         <input type="text" name="checktext3" id="step3_3_text"
                             placeholder="не совсем (Пожалуйста, опишите кратко что именно)">
@@ -177,9 +177,9 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step8_1" name="check8"    value="мужской" type="checkbox" placeholder="">
+                        <input id="step8_1" name="check8[]"    value="мужской" type="checkbox" placeholder="">
                         <label for="step8_1">Мужской</label>
-                        <input id="step8_2" name="check8" value="Женский" type="checkbox" placeholder="">
+                        <input id="step8_2" name="check8[]" value="Женский" type="checkbox" placeholder="">
                         <label for="step8_2">Женский</label>
                     </div>
                 </section>
@@ -193,15 +193,15 @@
                         <p class="desc">Выберите один ответ</p>
                     </div>
                     <div class="form_box">
-                        <input id="step9_1" name="check9" value="Меньше 18 лет" type="checkbox" placeholder="">
+                        <input id="step9_1" name="check9[]" value="Меньше 18 лет" type="checkbox" placeholder="">
                         <label for="step9_1">Меньше 18 лет</label>
-                        <input id="step9_2" name="check9" value="18 – 24" type="checkbox" placeholder="">
+                        <input id="step9_2" name="check9[]" val ue="от 18 до 24" type="checkbox" placeholder="">
                         <label for="step9_2">18 – 24</label>
-                        <input id="step9_3" name="check9" value="25 – 34" type="checkbox" placeholder="">
+                        <input id="step9_3" name="check9[]" value="от 25 до 34" type="checkbox" placeholder="">
                         <label for="step9_3">25 – 34</label>
-                        <input id="step9_4" name="check9" value="35 – 44" type="checkbox" placeholder="">
+                        <input id="step9_4" name="check9[]" value="от 35 до 44" type="checkbox" placeholder="">
                         <label for="step9_4">35 – 44</label>
-                        <input id="step9_5" name="check9" value="45 и старше" type="checkbox" placeholder="">
+                        <input id="step9_5" name="check9[]" value="45 и старше" type="checkbox" placeholder="">
                         <label for="step9_5">45 и старше</label>
                     </div>
                 </section>

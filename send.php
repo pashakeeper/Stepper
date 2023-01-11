@@ -20,9 +20,7 @@ foreach ($_POST['check5'] as $check_key5) {
 foreach ($_POST['check6'] as $check_key6) {
     echo $check_key6;
 }
-foreach ($_POST['check7'] as $check_key7) {
-    echo $check_key7;
-}
+
 foreach ($_POST['check8'] as $check_key8) {
     echo $check_key8;
 }
@@ -40,13 +38,13 @@ $message = '
                     </head>
                     <body>
                         <p>Имя: ' . $_POST['name'] . '</p>
-                        <p> Вопрос 1: ' . $check_key1 ? $check_key1 : $_POST['checktext1'] . '</p>
+                        <p> Вопрос 1: ' . $check_key1 . $_POST['checktext1'] . '</p>
                         <p> Вопрос 2: ' . $check_key2 . '</p>
                         <p> Вопрос 3: ' . $check_key3 . '</p>
                         <p> Вопрос 4: ' . $check_key4 . '</p>
-                        <p> Вопрос 5: ' . $check_key5 || $_POST['checktext2'] . '</p>
-                        <p> Вопрос 6: ' . $check_key6 || $_POST['checktext3'] . '</p>
-                        <p> Вопрос 7: ' . $check_key7 || $_POST['checktext4'] . '</p>
+                        <p> Вопрос 5: ' . $check_key5 . $_POST['checktext2'] . '</p>
+                        <p> Вопрос 6: ' . $check_key6 . $_POST['checktext3'] . '</p>
+                        <p> Вопрос 7: ' . $_POST['check7'] . $_POST['checktext4'] . '</p>
                         <p> Вопрос 8: ' . $check_key8 . '</p>
                         <p> Вопрос 9: ' . $check_key9 . '</p>
                         <p> Вопрос 10: ' . $_POST['checktext5'] . '</p>     
